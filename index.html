@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Basic Javascript Types</h3>
+  <img src='JS.jpg' style='max-width:200px;'>
+  <ol>
+    <li>string</li>
+    <ul><li>double or single quotes</li></ul>
+    <li>number</li>
+    <ul><li>no quotes necessary</li></ul>
+    <li>boolean</li>
+    <ul><li>true or false with no quotations</li></ul>
+    <li>null</li>
+    <ul><li>holds no type</li></ul>
+    <li>undefined</li>
+    <ul><li>self explanatory</li></ul>
+  </ol>
+  <h4>Other/Composite Types</h4>
+  <ol>
+    <li>object</li>
+    <ul>
+      <li>An object can be many things but mostly it is surrounded by {}</li>
+      <li>You can check to see the type in your console by using</li>
+      <ul><li><strong>typeof</strong> your_variable</li></ul>
+      <h5>Loops for Objects</h5>
+      <li>for in - for (myVar in myObj){"will iterate through each element in your object"}</li>
+    </ul>
+    <li>array</li>
+    <h5>Declaring your array</h5>
+    <ul>
+      <li>var array1 = [1,2,3,4,5]</li>
+      <li>var array2 = []</li>
+      <li>var array 3 = new Array(1,2,3,4,5)</li>
+    </ul>
+    <h5>Array Methods</h5>
+    <ul>
+      <li>array.push()</li>
+      <li>array.pop()</li>
+      <li>array.shift() - this will remove the first element in your array</li>
+      <li>array.unshift()</li>
+      <li>array.concat()</li>
+    </ul>
+  </ol>
+  <h3>Scope!</h3>
+  <ol>
+    <li>var - (global) - var will declare a variable that will have scope outside of a function. So if function one() declares var myVar = "string1", function two(string1) will work because var can jump from inside function one into function two.</li>
+    <li>let - (local) - let will only work inside the function it will be declared in. For recursive functions let will not work because the function being called by the main base function will not carry over</li>
+    <li>const - (global) - we use const when we do not want our variable to change types and for our variable to be available globally</li>
+  </ol>
+<div class='selector-class'>
+  <h3>Selectors</h3>
+  <h5>We use Selectors to gain access to the DOM (Document-Object-Model) with JavaScript</h5>
+  <ol>
+    
+    <li>Show the html <\body> inside the console</li>
+    <ul>
+      <li><button type='button' name='document-body' onClick='docubod()'>document.body</button></li>
+    </ul>
+    
+    <li>Alert function</li>
+      <ul>
+        <li><button type='button' name='alert' onClick='alert("You just Clicked the button")'>Alert Button</button></li>
+      </ul>
+    
+    <li>Access the DOM images</li>
+      <ul>
+        <li><button type='button' name='document-images' onClick='docuimg()'>document.images</button></li>
+      </ul>
+    
+    <li>Get an element by ID</li>
+      <ul>
+        <li><button type='button' name='document-getElementById' id='selectors' onClick='docuID()'>document.getElementById('selectors')</button> </li>
+      </ul>
+    
+    <li>Access an entire class of elements meaning multiple elements as IDs are meant to be unique</li>
+      <ul>
+        <li>We can access these class elements like we access elements in an array - for example here we are targeting the 'selectors' class and we can access the firt class in the array by assigning our function to a variable and calling the variable myVar[i]</li>
+        <li>
+          <button type='button' name-='document-getElementsByClassName' onClick='docuClass()'>document.getElementsByClassName</button> 
+        </li>
+      </ul>
+
+    <li>Access all items of a specific tag</li>
+      <ul>
+        <li>Just like classes we can access each individual tag elelemnt by assigning our function to a variable and accessing the variabla as an array myVar[i]</li>
+        <li><button type='button' name='document-getElementsByTagName' onClick='docuTag()'>document.getElementsByTagName</button> </li>
+      </ul>
+    
+    <li>The Document method <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll</a>() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.</li>
+      <ul>
+        
+        <li><button type='button' name='querySelectorAll' onClick='docuQueryAll()' >document.querySelectorAll</button></li>
+      </ul>
+  </ol>
+</div>
+  <script>
+    console.log("we can run js in a script tag here. Hello from an inline script tag");
+    function docubod(){console.log(document.body)};
+    function docuimg(){console.log(document.images)};
+    function docuID(){console.log(document.getElementById('selectors'))}
+    function docuClass(){console.log(document.getElementsByClassName('selector-class'))}
+    function docuTag(){console.log(document.getElementsByTagName('h5'))}
+    function docuQueryAll(){console.log(document.querySelectorAll('img'))}
+  </script>
+  <script src='/app.js'></script>
+</body>
+</html>
