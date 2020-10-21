@@ -95,9 +95,34 @@
         
         <li><button type='button' name='querySelectorAll' onClick='docuQueryAll()' >document.querySelectorAll</button></li>
       </ul>
+
+    <li>Change targeted elements to red</li>
+      <ul>
+        <li>We can change an elements style by using a Javascript function in this example we will </li>
+        <li><button type='button' name='changeToRed' onClick='changeToRed()'>Change chosen elements style</button></li>
+        <li><button type='button' name='changeBack' onClick='changeToBlack()'>Change back to Black</button></li>
+      </ul>
   </ol>
 </div>
   <script>
+    
+    function changeToBlack(){
+      let myLi = document.getElementsByTagName('li');
+      for (let i=0; i < myLi.length; i++) {
+        myLi[i].style.color = 'black';
+        console.log(myLi[i])
+      }
+    }
+
+    function changeToRed(){
+      let myLi = document.getElementsByTagName('li');
+      for (let i = 0; i < myLi.length; i++) {
+      myLi[i].style.color = 'red';
+      console.log(myLi[i])
+      }
+      
+    }
+    
     console.log("we can run js in a script tag here. Hello from an inline script tag");
     function docubod(){console.log(document.body)};
     function docuimg(){console.log(document.images)};
@@ -105,7 +130,8 @@
     function docuClass(){console.log(document.getElementsByClassName('selector-class'))}
     function docuTag(){console.log(document.getElementsByTagName('h5'))}
     function docuQueryAll(){console.log(document.querySelectorAll('img'))}
+
   </script>
-  <script src='/app.js'></script>
+  <!-- <script src='/app.js'></script> -->
 </body>
 </html>
