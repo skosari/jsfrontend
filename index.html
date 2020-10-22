@@ -5,6 +5,8 @@
   <title>Document</title>
 </head>
 <body>
+
+
   <h3>Basic Javascript Types</h3>
   <img src='JS.jpg' style='max-width:200px;'>
   <ol>
@@ -27,32 +29,37 @@
       <li>You can check to see the type in your console by using</li>
       <ul><li><strong>typeof</strong> your_variable</li></ul>
       <h5>Loops for Objects</h5>
-      <li><code>for in - for (myVar in myObj){"will iterate through each element in your object"}</code></li>
+      <li>for in - for (myVar in myObj){"will iterate through each element in your object"}</li>
     </ul>
     <li>array</li>
     <h5>Declaring your array</h5>
-    <ul><code>
+    <ul>
       <li>var array1 = [1,2,3,4,5]</li>
       <li>var array2 = []</li>
       <li>var array 3 = new Array(1,2,3,4,5)</li>
-    </code></ul>
+    </ul>
     <h5>Array Methods</h5>
-    <ul><code>
+    <ul>
       <li>array.push()</li>
       <li>array.pop()</li>
       <li>array.shift() - this will remove the first element in your array</li>
       <li>array.unshift()</li>
       <li>array.concat()</li>
-    </code></ul>
+    </ul>
   </ol>
+
+
   <h3>Scope!</h3>
   <ol>
+    <li>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript initialized that no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below var myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration</li>
     <li>var - (global) - var will declare a variable that will have scope outside of a function. So if function one() declares var myVar = "string1", function two(string1) will work because var can jump from inside function one into function two.</li>
     <li>let - (local) - let will only work inside the function it will be declared in. For recursive functions let will not work because the function being called by the main base function will not carry over</li>
     <li>const - (global) - we use const when we do not want our variable to change types and for our variable to be available globally</li>
   </ol>
+
+
 <div class='selector-class'>
-  <h3>Selectors</h3>
+  <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Selectors</a></h3>
   <h5>We use Selectors to gain access to the DOM (Document-Object-Model) with JavaScript</h5>
   <ol>
     
@@ -103,41 +110,6 @@
         <li><button type='button' name='changeBack' onClick='changeToBlack()'>Change back to Black</button></li>
       </ul>
   </ol>
-</div>
-<div class='browser-detection'>
-  <h3>Detectr your browser functions</h3>
-  <li><code>navigator.userAgent</code></li>
-  <ul>
-    <li>Above we return the following: <code>"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"</code></li></ul>
-  <li>This will return <code>true</code> if you are in Chrome or any specific browser we wish to check for</li>
-  <ul>
-    <li><code>navigator.userAgent.includes('Chrome')</code></li>
-    <li><code>navigator.UserAgent.includes('Safari')</code></li>
-    <li><code>navigator.UserAgent.includes('')</code></li>
-  </ul>
-</div>
-<div class='pollyfills'>
-  <h3>Pollyfills are beta code or future standard javascript that is not yet implemented on all browsers</h3>
-  <ol>
-    <ul>
-      <li>If you attemp to run log('Your Meassage here') that will not work because log is a pollyfill</li>
-      <li>Pollyfills can be implemented however with some clever code. Below we have the log example</li>
-      <li>
-        <code>
-          if (!window.log) {</br>
-            console.log("...patching");</br>
-            window.log => msg console.log(msg);</br>
-          }</br>
-        </br>
-        log("hey future standard");
-        </code>
-      </li>
-    </ul>
-  </ol>
-</div>
-<div class='async'></div>
-<div class='promises'></div>
-
 </div>
   <script>
     
