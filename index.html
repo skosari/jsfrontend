@@ -27,23 +27,23 @@
       <li>You can check to see the type in your console by using</li>
       <ul><li><strong>typeof</strong> your_variable</li></ul>
       <h5>Loops for Objects</h5>
-      <li>for in - for (myVar in myObj){"will iterate through each element in your object"}</li>
+      <li><code>for in - for (myVar in myObj){"will iterate through each element in your object"}</code></li>
     </ul>
     <li>array</li>
     <h5>Declaring your array</h5>
-    <ul>
+    <ul><code>
       <li>var array1 = [1,2,3,4,5]</li>
       <li>var array2 = []</li>
       <li>var array 3 = new Array(1,2,3,4,5)</li>
-    </ul>
+    </code></ul>
     <h5>Array Methods</h5>
-    <ul>
+    <ul><code>
       <li>array.push()</li>
       <li>array.pop()</li>
       <li>array.shift() - this will remove the first element in your array</li>
       <li>array.unshift()</li>
       <li>array.concat()</li>
-    </ul>
+    </code></ul>
   </ol>
   <h3>Scope!</h3>
   <ol>
@@ -104,11 +104,40 @@
       </ul>
   </ol>
 </div>
-<div class='browser-compat'>
+<div class='browser-detection'>
   <h3>Detectr your browser functions</h3>
   <li><code>navigator.userAgent</code></li>
-  <li><code>navigator.userAgent.includes('Chrome')</code></li>
-  <ul><li>This will return ture if you are in chrome</li></ul>
+  <ul>
+    <li>Above we return the following: <code>"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"</code></li></ul>
+  <li>This will return <code>true</code> if you are in Chrome or any specific browser we wish to check for</li>
+  <ul>
+    <li><code>navigator.userAgent.includes('Chrome')</code></li>
+    <li><code>navigator.UserAgent.includes('Safari')</code></li>
+    <li><code>navigator.UserAgent.includes('')</code></li>
+  </ul>
+</div>
+<div class='pollyfills'>
+  <h3>Pollyfills are beta code or future standard javascript that is not yet implemented on all browsers</h3>
+  <ol>
+    <ul>
+      <li>If you attemp to run log('Your Meassage here') that will not work because log is a pollyfill</li>
+      <li>Pollyfills can be implemented however with some clever code. Below we have the log example</li>
+      <li>
+        <code>
+          if (!window.log) {</br>
+            console.log("...patching");</br>
+            window.log => msg console.log(msg);</br>
+          }</br>
+        </br>
+        log("hey future standard");
+        </code>
+      </li>
+    </ul>
+  </ol>
+</div>
+<div class='async'></div>
+<div class='promises'></div>
+
 </div>
   <script>
     
