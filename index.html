@@ -51,12 +51,18 @@
 
   <h3>Scope!</h3>
   <ol>
-    <li>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript initialized that no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below var myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration</li>
+    <li>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</li>
     <li>var - (global) - var will declare a variable that will have scope outside of a function. So if function one() declares var myVar = "string1", function two(string1) will work because var can jump from inside function one into function two.</li>
     <li>let - (local) - let will only work inside the function it will be declared in. For recursive functions let will not work because the function being called by the main base function will not carry over</li>
     <li>const - (global) - we use const when we do not want our variable to change types and for our variable to be available globally</li>
   </ol>
 
+  <h3>The Event Loop</h3>
+  <ol>
+    <li>
+      The event loop is what makes javascript still relevant as a single threaded application in an increasingly multithreaded world. Think of an Emergeny room where you go essentially as a first come first serve basis until someone with a greater emergy enters the building at which point they will be push up the queue and go in first. This is essentially how javascript operates. 
+    </li>
+  </ol>
 
 <div class='selector-class'>
   <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Selectors</a></h3>
