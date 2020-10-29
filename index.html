@@ -4,25 +4,77 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script type='text/javascript' src='/app.js'></script>
+  <style>
+    table{
+      display: flex;
+      width:fit-content;
+      border-collapse: collapse;
+    }
+    table, td, th{
+      border: 1px solid black;
+    }
+    tr{
+      justify-content:center;
+    }
+    td{
+      padding:1em;
+    }
+
+    #types tr:nth-child(even){
+      background-color: #f2f2f2;
+    }
+    #types tr:hover{
+      background-color: #ddd;
+    }
+    #types th{
+      padding-top:12px;
+      padding-bottom:12px;
+      text-align:center;
+      background-color: #4CAF50;
+      color:white;
+    }
+    h3{
+      text-align:center;
+    }
+  </style>
 </head>
 <body>
-
-
-  <h3>Basic Javascript Types</h3>
+  
   <img src='JS.jpg' style='max-width:200px;'>
-  <ol>
-    <li>string</li>
-    <ul><li>double or single quotes</li></ul>
-    <li>number</li>
-    <ul><li>no quotes necessary</li></ul>
-    <li>boolean</li>
-    <ul><li>true or false with no quotations</li></ul>
-    <li>null</li>
-    <ul><li>holds no type</li></ul>
-    <li>undefined</li>
-    <ul><li>self explanatory</li></ul>
-  </ol>
-  <h4>Other/Composite Types</h4>
+  <hr>
+  <h3>Basic Javascript Types</h3>
+  <table id='types'>
+    <tr>
+      <th>String</th>
+      <th>Number</th>
+      <th>Boolean</th>
+      <th>null</th>
+      <th>undefined</th>
+    </tr>
+    <tr>
+      <td>var myVar = "a String"</td>
+      <td>var num = 5;</td>
+      <td>var myBool = true;</td>
+      <td>holds no type</td>
+      <td>self explanatory</td>
+    </tr>
+    <tr>
+      <td>charOf() reveails ascii value</td>
+      <td>Math.round()</td>
+      <td>if(true){ run }</td>
+      <td>var myVar = null;</td>
+      <td>Check the console</td>
+    </tr>
+    <tr>
+      <td>double or single quotes</td>
+      <td>No quotes necessary</td>
+      <td>2 === '2'  false</td>
+      <td>this.value = value || null;</td>
+      <td>Seriously Check the console</td>
+    </tr>
+  </table>
+
+  <h3>Other/Composite Types</h3>
   <ol>
     <li>object</li>
     <ul>
@@ -49,7 +101,7 @@
     </ul>
   </ol>
 
-
+  <hr>
   <h3>Scope!</h3>
   <ol>
     <li>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</li>
@@ -58,13 +110,14 @@
     <li>const - (global) - we use const when we do not want our variable to change types and for our variable to be available globally</li>
   </ol>
 
+  <hr>
   <h3>The Event Loop</h3>
   <ol>
     <li>
       The event loop is what makes javascript still relevant as a single threaded application in an increasingly multithreaded world. Think of an Emergeny room where you go essentially as a first come first serve basis until someone with a greater emergy enters the building at which point they will be push up the queue and go in first. This is essentially how javascript operates. 
     </li>
   </ol>
-
+<hr>
 <div class='selector-class'>
   <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Selectors</a></h3>
   <h5>We use Selectors to gain access to the DOM (Document-Object-Model) with JavaScript</h5>
