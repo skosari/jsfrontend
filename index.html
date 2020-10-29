@@ -5,6 +5,9 @@
   <title>Document</title>
   <script type='text/javascript' src='/app.js'></script>
   <style>
+    h3{
+      text-align:center;
+    }
     table{
       display: flex;
       width:fit-content;
@@ -13,29 +16,37 @@
     table, td, th{
       border: 1px solid black;
     }
-    tr{
-      justify-content:center;
-    }
     td{
       padding:1em;
     }
-
-    #types tr:nth-child(even){
-      background-color: #f2f2f2;
-    }
-    #types tr:hover{
-      background-color: #ddd;
-    }
-    #types th{
+    th{
       padding-top:12px;
       padding-bottom:12px;
       text-align:center;
       background-color: #4CAF50;
       color:white;
     }
-    h3{
-      text-align:center;
+    tr:nth-child(even){
+      background-color: #f2f2f2;
     }
+    tr:hover{
+      background-color: #ddd;
+    }
+
+    #types th{
+      background-color: #4caf50 
+    }
+    #arrays th{
+      background-color: #FDD734;
+      color: black;
+    }
+    #scope th{
+      background-color: #323330;
+      color:#FDD734;
+      border-color: #FDD734;
+    }
+    
+
   </style>
 </head>
 <body>
@@ -73,8 +84,11 @@
       <td>Seriously Check the console</td>
     </tr>
   </table>
+  <hr>
+  
+  <h3>Object Methods</h3>
 
-  <h3>Other/Composite Types</h3>
+  
   <ol>
     <li>object</li>
     <ul>
@@ -84,31 +98,65 @@
       <h5>Loops for Objects</h5>
       <li>for in - for (myVar in myObj){"will iterate through each element in your object"}</li>
     </ul>
-    <li>array</li>
-    <h5>Declaring your array</h5>
-    <ul>
-      <li>var array1 = [1,2,3,4,5]</li>
-      <li>var array2 = []</li>
-      <li>var array 3 = new Array(1,2,3,4,5)</li>
-    </ul>
-    <h5>Array Methods</h5>
-    <ul>
-      <li>array.push()</li>
-      <li>array.pop()</li>
-      <li>array.shift() - this will remove the first element in your array</li>
-      <li>array.unshift()</li>
-      <li>array.concat()</li>
+    
     </ul>
   </ol>
 
   <hr>
+  <h3>Array Methods</h3>
+  <table id='arrays'>
+    <tr>
+      <th>array.push()</th>
+      <th>array.pop()</th>
+      <th>array.shift()</th>
+      <th>array.unshift()</th>
+      <th>array.concat()</th>
+    </tr>
+    <tr>
+      <td>myArr.push('new item')</td>
+      <td>myVar = myArr.pop()</td>
+      <td>myVar = myArr.shift()</td>
+      <td>myVar = myArr.unshift("new arr item", "multiple array items")</td>
+      <td>myArr1.concat(myArr2)</td>
+    </tr>
+    <tr>
+      <td>We can add a new item to the end of our array using the array.pop(;item we want to add') method</td>
+      <td>We can remove the last item in our array and assign it to a variable if we like</td>
+      <td>This will remove the first item of the array and assign it to the variable</td>
+      <td>This will add new array items to the front of your array </td>
+      <td>To join two arrays together we can concatenate them</td>
+    </tr>
+  </table>
+  
+  <h5>Declaring your array</h5>
+  <ul>
+    <li>var array1 = [1,2,3,4,5]</li>
+    <li>var array2 = []</li>
+    <li>var array 3 = new Array(1,2,3,4,5)</li>
+  </ul>
+  <hr>
   <h3>Scope!</h3>
-  <ol>
-    <li>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</li>
-    <li>var - (global) - var will declare a variable that will have scope outside of a function. So if function one() declares var myVar = "string1", function two(string1) will work because var can jump from inside function one into function two.</li>
-    <li>let - (local) - let will only work inside the function it will be declared in. For recursive functions let will not work because the function being called by the main base function will not carry over</li>
-    <li>const - (global) - we use const when we do not want our variable to change types and for our variable to be available globally</li>
-  </ol>
+  <table id='scope'>
+    <tr>
+      <th>var</th>
+      <th>let</th>
+      <th>const</th>
+    </tr>
+    <tr>
+      <td>global scope</td>
+      <td>local scope</td>
+      <td> global scope</td>
+    </tr>
+    <tr>
+      <td>var - var will declare a variable that will have scope outside of a function. So if function one() declares var myVar = "string1", function two(string1) will work because var can jump from inside function one into function two.</td>
+      <td>let - let will only work inside the function it will be declared in. For recursive functions let will not work because the function being called by the main base function will not carry over</td>
+      <td>const - we use const when we do not want our variable to change types and for our variable to be available globally</td>
+    </tr>
+  </table>
+  
+  <h3>Temporal Dead Zones</h3>
+    <p>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</p>
+
 
   <hr>
   <h3>The Event Loop</h3>
@@ -169,7 +217,16 @@
         <li><button type='button' name='changeToRed' onClick='changeToRed()'>Change chosen elements style</button></li>
         <li><button type='button' name='changeBack' onClick='changeToBlack()'>Change back to Black</button></li>
       </ul>
-  </ol>
+
+    <li>Input Field Submit - subscribe to my email list, I will never sell your info.</li>
+      <form>
+        Name:
+        <input type='text'><br>
+        Email:
+        <input type='text'><br>
+        <button type='submit'>Submit</button>
+      </form>
+    </ol>
 </div>
 
 </body>
