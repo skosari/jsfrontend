@@ -15,9 +15,10 @@
     }
     table, td, th{
       border: 1px solid black;
+      
     }
     td{
-      padding:1em;
+      padding:.2em;
     }
     th{
       padding-top:12px;
@@ -45,13 +46,54 @@
       color:#FDD734;
       border-color: #FDD734;
     }
-    
-
+    .nav{
+      display:flex;
+      width:100%;
+    }
+    .nav button{
+      margin:0px auto 0px auto;
+      
+    }
+    #nav-img{
+      max-width:160px; 
+      border-radius: 1em; 
+      margin:.5em auto .5em .5em;
+    }
+    .row{
+      display:flex;
+      width:100%;
+    }
+    .row::after{
+      display:block;/*any row that comes after will stack below the row above it */
+      clear: both;/*clear any parent properties*/
+      content: "";/*Clear any content*/
+    }
+    .col-1 {width: 8.33%};
+    .col-2 {width: 16.66%};
+    .col-3 {width: 25%};
+    .col-4 {width: 33.33%};
+    .col-5 {width: 41.66%};
+    .col-6 {width: 50%};
+    .col-7 {width: 58.33%};
+    .col-8 {width: 66.66%};
+    .col-9 {width: 75%};
+    .col-10 {width: 83.33%};
+    .col-11 {width: 91.66%};
+    .col-12 {width: 100%};
   </style>
 </head>
 <body>
+  <div class='nav'>
+    <img src='JS.jpg' id='nav-img'>
+    <button>Types</button>
+    <button>Objects</button>    <button>Types</button>
+    <button>Objects</button>    <button>Types</button>
+    <button>Objects</button>    <button>Types</button>
+    <button>Objects</button>    <button>Types</button>
+    <button>Objects</button>    <button>Types</button>
+    <button>Objects</button>
+  </div>
   
-  <img src='JS.jpg' style='max-width:200px;'>
   <hr>
   <h3>Basic Javascript Types</h3>
   <table id='types'>
@@ -168,7 +210,8 @@
 <hr>
 <div class='selector-class'>
   <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Selectors</a></h3>
-  <h5>We use Selectors to gain access to the DOM (Document-Object-Model) with JavaScript</h5>
+  <h4 style='text-align: center; font-style:italic;'>(Open your console <mark>F11</mark> in Chrome or <mark>Alt+O</mark> in Safari)</h4>
+  <h4>We use Selectors to gain access to the DOM (Document-Object-Model) with JavaScript</h4>
   <ol>
     
     <li>Show the html <\body> inside the console</li>
