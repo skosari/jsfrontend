@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script type='text/javascript' src='/app.js'></script>
   <link rel='stylesheet' href='/style.css'>
 </head>
-<body>
+<body id='top'>
   <nav>
     
     <ul class='top-nav'>
+      <li><a href='#top'>Top</a></li>
       <li><a href='#types'>Types</a></li>
       <li><a href='#object'>Objects</a></li>
       <li><a href='#array'>Arrays</a></li>
@@ -19,6 +21,7 @@
       <li><a href='#selectors'>DOM Selectors</a></li>
       <li class='top-nav-r'><a href=''>Sign Up</a></li>
       <li class='top-nav-r'><a href=''>Sign In</a></li>
+      <li class='dropdown-icon'><a href=''>&#9776;</a></li>
     </ul>
   </nav>
   <hr>
@@ -134,7 +137,7 @@
   </table>
   
   <h3 id='tdz'>Temporal Dead Zones</h3>
-    <p>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</p>
+    <p class=tdz-p>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</p>
 
 
   <hr>
