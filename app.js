@@ -18,10 +18,13 @@ function changeToRed(){
 //Mobile menu navigation
 function navMenuButton() {
   let menuItems = document.getElementById('dropMenu')
+  let topMenuItem = document.getElementById('top-select');
   if (menuItems.className === 'top-nav') {
-    menuItems.className += ' responsive'
+    menuItems.className += ' responsive';
+    topMenuItem.className += ' responsive';
   } else
   menuItems.className = 'top-nav';
+  topMenuItem.className = 'top-select';
 }
 
 //thumbButton reveal and hide on scroll
