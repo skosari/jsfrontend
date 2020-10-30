@@ -39,11 +39,28 @@ ul.top-nav li.top-nav-r{
 ul.top-nav li.dropdown-icon {
   display:none;
 }
+.thumbButton{
+  display:none;
+}
 /*********NAVBAR - MOBILE*************/
 @media screen and (max-width: 940px){
-  ul.top-nav li:not(:nth-child(1)){/*Add css to all li except the 1st child*/
+  #thumbButton{
+    display: inline;
+    position: fixed;
+    right:1em;
+    bottom:1em;
+    text-decoration:none;
+    min-height:16px;
+    text-align:center;
+    padding: 14px;
+    text-transform: uppercase;
+    color: white;
+    font-size: x-large;
+    background-color: #4CAF50;
+    border-radius: 1em;
+  }
+  ul.top-nav li{/*:not(:nth-child(1)Add css to all li except the 1st child*/
     display:none;
-    
   }
   ul.top-nav li.dropdown-icon {
     display: block;
@@ -51,6 +68,25 @@ ul.top-nav li.dropdown-icon {
   }
   ul.top-nav li {
     font-size: 1em;
+  }
+  ul.top-nav.responsive{
+    position:relative;
+    position:fixed;
+    width:100%;
+  }
+  ul.top-nav.responsive li.dropdown-icon{
+    position: absolute;
+    top:0;
+    right:0;
+  }
+  ul.top-nav.responsive li{
+    display:inline;
+    float:none;
+  }
+  ul.top-nav.responsive li a{
+    display:block;
+    text-align:left;
+    
   }
 }
 

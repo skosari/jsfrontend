@@ -13,7 +13,26 @@ function changeToRed(){
   myLi[i].style.color = 'red';
   console.log(myLi[i])
   }
-  
+}
+
+//Mobile menu navigation
+function navMenuButton() {
+  let menuItems = document.getElementById('dropMenu')
+  if (menuItems.className === 'top-nav') {
+    menuItems.className += ' responsive'
+  } else
+  menuItems.className = 'top-nav';
+}
+
+//thumbButton reveal and hide on scroll
+window.onscroll = function() {menuButtonBottom()};
+function menuButtonBottom() {
+  var bottomButton = document.getElementById('thumbButton')
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    bottomButton.style.display = 'inline';
+  } else {
+    bottomButton.style.display = 'none';
+  }
 }
 
 console.log("we can run js in a script tag here. Hello from an inline script tag");

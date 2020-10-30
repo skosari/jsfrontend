@@ -9,20 +9,20 @@
 </head>
 <body id='top'>
   <nav>
-    
-    <ul class='top-nav'>
-      <li><a href='#top'>Top</a></li>
-      <li><a href='#types'>Types</a></li>
-      <li><a href='#object'>Objects</a></li>
-      <li><a href='#array'>Arrays</a></li>
-      <li><a href='#scope'>Scope</a></li>
-      <li><a href='#tdz'>TDZ</a></li>
-      <li><a href='#event_loop'>Event Loop</a></li>
-      <li><a href='#selectors'>DOM Selectors</a></li>
+    <ul class='top-nav' id='dropMenu'>
+      <li><a href='#top' onClick='navMenuButton()'>Top</a></li>
+      <li><a href='#types' onClick='navMenuButton()'>Types</a></li>
+      <li><a href='#object' onClick='navMenuButton()'>Objects</a></li>
+      <li><a href='#array' onClick='navMenuButton()'>Arrays</a></li>
+      <li><a href='#scope' onClick='navMenuButton()'>Scope</a></li>
+      <li><a href='#tdz' onClick='navMenuButton()'>TDZ</a></li>
+      <li><a href='#event_loop' onClick='navMenuButton()'>Event Loop</a></li>
+      <li><a href='#selectors' onClick='navMenuButton()'>DOM Selectors</a></li>
       <li class='top-nav-r'><a href=''>Sign Up</a></li>
       <li class='top-nav-r'><a href=''>Sign In</a></li>
-      <li class='dropdown-icon'><a href=''>&#9776;</a></li>
+      <li class='dropdown-icon'><a href='javascript:void(0);' onClick='navMenuButton()'>&#9776;</a></li>
     </ul>
+    <a href='javascript:void(0);' id='thumbButton' onClick='navMenuButton()'>&#9776;</a>
   </nav>
   <hr>
   <div id='about-container'>
