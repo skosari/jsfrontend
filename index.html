@@ -4,99 +4,25 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script type='text/javascript' src='/app.js'></script>
-  <style>
-    h3{
-      text-align:center;
-    }
-    table{
-      display: flex;
-      width:fit-content;
-      border-collapse: collapse;
-    }
-    table, td, th{
-      border: 1px solid black;
-      
-    }
-    td{
-      padding:.2em;
-    }
-    th{
-      padding-top:12px;
-      padding-bottom:12px;
-      text-align:center;
-      background-color: #4CAF50;
-      color:white;
-    }
-    tr:nth-child(even){
-      background-color: #f2f2f2;
-    }
-    tr:hover{
-      background-color: #ddd;
-    }
-
-    #types th{
-      background-color: #4caf50 
-    }
-    #arrays th{
-      background-color: #FDD734;
-      color: black;
-    }
-    #scope th{
-      background-color: #323330;
-      color:#FDD734;
-      border-color: #FDD734;
-    }
-    .nav{
-      display:flex;
-      width:100%;
-    }
-    .nav button{
-      margin:0px auto 0px auto;
-      
-    }
-    #nav-img{
-      max-width:160px; 
-      border-radius: 1em; 
-      margin:.5em auto .5em .5em;
-    }
-    .row{
-      display:flex;
-      width:100%;
-    }
-    .row::after{
-      display:block;/*any row that comes after will stack below the row above it */
-      clear: both;/*clear any parent properties*/
-      content: "";/*Clear any content*/
-    }
-    .col-1 {width: 8.33%};
-    .col-2 {width: 16.66%};
-    .col-3 {width: 25%};
-    .col-4 {width: 33.33%};
-    .col-5 {width: 41.66%};
-    .col-6 {width: 50%};
-    .col-7 {width: 58.33%};
-    .col-8 {width: 66.66%};
-    .col-9 {width: 75%};
-    .col-10 {width: 83.33%};
-    .col-11 {width: 91.66%};
-    .col-12 {width: 100%};
-  </style>
+  <link rel='stylesheet' href='/style.css'>
 </head>
 <body>
-  <div class='nav'>
+  <nav>
     <img src='JS.jpg' id='nav-img'>
-    <button>Types</button>
-    <button>Objects</button>    <button>Types</button>
-    <button>Objects</button>    <button>Types</button>
-    <button>Objects</button>    <button>Types</button>
-    <button>Objects</button>    <button>Types</button>
-    <button>Objects</button>    <button>Types</button>
-    <button>Objects</button>
-  </div>
+    <ul>
+      <li><a href='#types'>Standard Types</a></li>
+      <li><a href='#object'>Objects</a></li>
+      <li><a href='#array'>Array Methods</a></li>
+      <li><a href='#scope'>Scope</a></li>
+      <li><a href='#tdz'>Temporal Dead Zones</a></li>
+      <li><a href='#event_loop'>The Event Loop</a></li>
+      <li><a href='#selectors'>DOM Selectors</a></li>
+    </ul>
+  </nav>
   
   <hr>
-  <h3>Basic Javascript Types</h3>
-  <table id='types'>
+  <h3 id='types'>Basic Javascript Types</h3>
+  <table id='type-table'>
     <tr>
       <th>String</th>
       <th>Number</th>
@@ -128,7 +54,7 @@
   </table>
   <hr>
   
-  <h3>Object Methods</h3>
+  <h3 id='object'>Object Methods</h3>
 
   
   <ol>
@@ -145,8 +71,8 @@
   </ol>
 
   <hr>
-  <h3>Array Methods</h3>
-  <table id='arrays'>
+  <h3 id='array'>Array Methods</h3>
+  <table id='array-table'>
     <tr>
       <th>array.push()</th>
       <th>array.pop()</th>
@@ -177,8 +103,8 @@
     <li>var array 3 = new Array(1,2,3,4,5)</li>
   </ul>
   <hr>
-  <h3>Scope!</h3>
-  <table id='scope'>
+  <h3 id='scope'>Scope!</h3>
+  <table id='scope-table'>
     <tr>
       <th>var</th>
       <th>let</th>
@@ -196,12 +122,12 @@
     </tr>
   </table>
   
-  <h3>Temporal Dead Zones</h3>
+  <h3 id='tdz'>Temporal Dead Zones</h3>
     <p>To understand the differences between these three variable declarations you must understand Temporal dead zones. The space before the variable is declared. When using <code>var</code> Javascript declares your variable and will assign its value or initialize it no matter where in the file you place it as it is HOISETED, so there is no Temporal Dead Zone, but the value can change in the order it is placed. For instance if var myVar = 12 and the line below assignes myVar = 13 my Var will = 13. Where Temporal Deadzones occur are with the let and const declarations. Let has a minimal scope and is usefull for containing variable values inside functions. This can lead to very clean code with a developer friendly syntax by using the same iterators for example in your loops. Const also has a Temporal Dead Zone but const has the benefit of not changing types or values. It is essentially a READ-ONLY variable declaration. Bothe let and const are also hoisted but they have no value assigned, not even null or undefined. The event loop is simply made aware of their existence</p>
 
 
   <hr>
-  <h3>The Event Loop</h3>
+  <h3 id='event_loop'>The Event Loop</h3>
   <ol>
     <li>
       The event loop is what makes javascript still relevant as a single threaded application in an increasingly multithreaded world. Think of an Emergeny room where you go essentially as a first come first serve basis until someone with a greater emergy enters the building at which point they will be push up the queue and go in first. This is essentially how javascript operates. 
@@ -209,8 +135,8 @@
   </ol>
 <hr>
 <div class='selector-class'>
-  <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Selectors</a></h3>
-  <h4 style='text-align: center; font-style:italic;'>(Open your console <mark>F11</mark> in Chrome or <mark>Alt+O</mark> in Safari)</h4>
+  <h3 id='selectors'><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">DOM Selectors</a></h3>
+  <h4 style='text-align: center; font-style:italic;'>(Open your console <mark>F11</mark> in Chrome or <mark>Command + Option + C</mark> in Safari)</h4>
   <h4>We use Selectors to gain access to the DOM (Document-Object-Model) with JavaScript</h4>
   <ol>
     
@@ -231,7 +157,7 @@
     
     <li>Get an element by ID</li>
       <ul>
-        <li><button type='button' name='document-getElementById' id='selectors' onClick='docuID()'>document.getElementById('selectors')</button> </li>
+        <li><button type='button' name='document-getElementById' onClick='docuID()'>document.getElementById('selectors')</button> </li>
       </ul>
     
     <li>Access an entire class of elements meaning multiple elements as IDs are meant to be unique</li>
