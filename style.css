@@ -8,7 +8,6 @@ nav, header, footer{
 nav{
   width:100%;
   margin:0;
-
 }
 nav ul {
   background-color: #eee;
@@ -39,14 +38,14 @@ ul.top-nav li.top-nav-r{
 ul.top-nav li.dropdown-icon {
   display:none;
 }
-.thumbButton{
+#thumbButton{
   display:none;
 }
 .top-select{
-  display:none;
+  display: none;
 }
 /*********NAVBAR - MOBILE*************/
-@media screen and (max-width: 940px){
+@media screen and (max-width: 863px){
   #thumbButton{
     display: inline;
     position: fixed;
@@ -65,7 +64,7 @@ ul.top-nav li.dropdown-icon {
   .top-select.responsive{
     display:inline;
   }
-  ul.top-nav li{/*:not(:nth-child(1)Add css to all li except the 1st child*/
+  ul.top-nav li{
     display:none;
   }
   ul.top-nav li.dropdown-icon {
@@ -92,27 +91,16 @@ ul.top-nav li.dropdown-icon {
   ul.top-nav.responsive li a{
     display:block;
     text-align:left;
-    
   }
 }
-
-
-
 
 
 #about-container{
   display: flex;
   margin: auto; 
 }
-#about-1{
-  /* justify-content: flex-start; */
-}
-#about-2{
-  /* justify-content:flex-end; */
-}
 #about-img{
   max-width:160px; 
-  /* border-radius: 1em;  */
   margin-right: 10px;
 }
 
@@ -128,7 +116,6 @@ table{
 }
 table, td, th{
   border: 1px solid black;
-  
 }
 td{
   padding:.2em;
@@ -146,7 +133,6 @@ tr:nth-child(even){
 tr:hover{
   background-color: #ddd;
 }
-
 #type-table th{
   background-color: #4caf50 
 }

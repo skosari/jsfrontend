@@ -29,7 +29,7 @@ function navMenuButton() {
 
 //thumbButton reveal and hide on scroll
 window.onscroll = function() {
-  if (window.innerWidth < 940) menuButtonBottom()
+  if (window.innerWidth < 864) menuButtonBottom()
 };
 function menuButtonBottom() {
   var bottomButton = document.getElementById('thumbButton')
