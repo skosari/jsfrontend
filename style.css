@@ -45,7 +45,7 @@ ul.top-nav li.dropdown-icon {
   display: none;
 }
 /*********NAVBAR - MOBILE*************/
-@media screen and (max-width: 863px){
+@media screen and (max-width: 879px){
   #thumbButton{
     display: inline;
     position: fixed;
@@ -97,7 +97,8 @@ ul.top-nav li.dropdown-icon {
 
 #about-container{
   display: flex;
-  margin: auto; 
+  margin: auto;
+  
 }
 #about-img{
   max-width:160px; 
