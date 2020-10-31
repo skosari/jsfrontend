@@ -97,12 +97,16 @@ ul.top-nav li.dropdown-icon {
 
 #about-container{
   display: flex;
-  margin: auto;
-  
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 #about-img{
   max-width:160px; 
   margin-right: 10px;
+  -webkit-box-shadow: 4px 4px 14px -6px rgba(0,0,0,0.56);
+-moz-box-shadow: 4px 4px 14px -6px rgba(0,0,0,0.56);
+box-shadow: 4px 4px 14px -6px rgba(0,0,0,0.56);
 }
 
 h3{
@@ -147,6 +151,20 @@ tr:hover{
   border-color: #FDD734;
 }
 
-p.tdz-p{
+p{
   margin: 0 1em 0;
+}
+
+/*Javascript Function demos*/
+.javascript-function{
+  background-color: #ddd;
+  margin:1em 1em;
+  display:block;
+  padding:.5em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: large;
+  line-height: 1.1em;
+}
+.javascript-function h5{
+  margin-top: 0;
 }

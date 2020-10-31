@@ -6,6 +6,7 @@
   <title>Document</title>
   <script type='text/javascript' src='/app.js'></script>
   <link rel='stylesheet' href='/style.css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body id='top'>
   <nav>
@@ -28,12 +29,14 @@
     </ul>
     <a href='javascript:void(0);' id='thumbButton' onClick='navMenuButton()'>&#9776;</a>
   </nav>
+
   <hr>
+  
   <div id='about-container'>
-    <div>
+    <div class='about1'>
       <img src='/JS.jpg' id='about-img'>
     </div>
-    <div>
+    <div class='about2'>
       <h3>Welcome to my learning Javascript demo page</h3>
       <p>The point of this page is to act as a sandbox on github to maintain and practice Javascript along with HTML and CSS.</p>
     </div>
@@ -146,11 +149,11 @@
 
   <hr>
   <h3 id='event_loop'>The Event Loop</h3>
-  <ol>
-    <li>
+  
+    <p>
       The event loop is what makes javascript still relevant as a single threaded application in an increasingly multithreaded world. Think of an Emergeny room where you go essentially as a first come first serve basis until someone with a greater emergy enters the building at which point they will be push up the queue and go in first. This is essentially how javascript operates. 
-    </li>
-  </ol>
+    </p>
+  
 <hr>
 <div class='selector-class'>
   <h3 id='selectors'><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">DOM Selectors</a></h3>
@@ -215,6 +218,43 @@
       </form>
     </ol>
 </div>
+
+<hr>
+<h3>Practical Front End Functions</h3>
+<div class='javascript-function'>
+  <h5>Top Menu Drop Down Button Function</h5>
+  <code>
+    function navMenuButton() {<br>
+      &emsp;let menuItems = document.getElementById('dropMenu');<br>
+      &emsp;let topMenuItem = document.getElementById('top-select');<br>
+      &emsp;&emsp;if (menuItems.className === 'top-nav') {<br>
+        &emsp;&emsp;&emsp;menuItems.className += ' responsive';<br>
+        &emsp;&emsp;&emsp;topMenuItem.className += ' responsive';<br>
+        &emsp;&emsp;} else<br>
+        &emsp;&emsp;menuItems.className = 'top-nav';<br>
+        &emsp;&emsp;topMenuItem.className = 'top-select';<br>
+        &emsp;}<br>
+  </code>
+</div>
+<div class='javascript-function'>
+  <h5>Bottom Thumb Button Function</h5>
+  <code>
+    window.onscroll = function() {<br>
+      &emsp;if (window.innerWidth < 880) menuButtonBottom()<br>
+    };<br>
+    <hr>
+    function menuButtonBottom() {<br>
+      &emsp;var bottomButton = document.getElementById('thumbButton')<br>
+      &emsp;if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 {<br>
+      &emsp;&emsp;bottomButton.style.display = 'inline';<br>
+      &emsp;} else {<br>
+      &emsp;bottomButton.style.display = 'none';<br>
+      &emsp;}<br>
+    }<br>
+  </code>
+</div>
+
+
 
 </body>
 </html>
