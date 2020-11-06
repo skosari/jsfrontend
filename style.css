@@ -2,98 +2,6 @@ body{
   line-height: 1;
   margin: 0;
 }
-nav, header, footer{
-  display: block;
-}
-nav{
-  width:100%;
-  margin:0;
-}
-nav ul {
-  background-color: #eee;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-ul.top-nav li{
-  list-style: none;
-  float: left;
-}
-ul.top-nav li a{
-  display:block;
-  text-decoration:none;
-  min-height:16px;
-  text-align:center;
-  padding: 14px;
-  text-transform: uppercase;
-  color:black;
-}
-ul.top-nav li a:hover{
-  background-color: #4CAF50;
-  color: white;
-}
-ul.top-nav li.top-nav-r{
-  float:right;
-}
-ul.top-nav li.dropdown-icon {
-  display:none;
-}
-#thumbButton{
-  display:none;
-}
-.top-select{
-  display: none;
-}
-/*********NAVBAR - MOBILE*************/
-@media screen and (max-width: 879px){
-  #thumbButton{
-    display: inline;
-    position: fixed;
-    right:1em;
-    bottom:1em;
-    text-decoration:none;
-    min-height:16px;
-    text-align:center;
-    padding: 14px;
-    text-transform: uppercase;
-    color: white;
-    font-size: x-large;
-    background-color: #4CAF50;
-    border-radius: 1em;
-  }
-  .top-select.responsive{
-    display:inline;
-  }
-  ul.top-nav li{
-    display:none;
-  }
-  ul.top-nav li.dropdown-icon {
-    display: block;
-    float: right;
-  }
-  ul.top-nav li {
-    font-size: 1em;
-  }
-  ul.top-nav.responsive{
-    position:relative;
-    position:fixed;
-    width:100%;
-  }
-  ul.top-nav.responsive li.dropdown-icon{
-    position: absolute;
-    top:0;
-    right:0;
-  }
-  ul.top-nav.responsive li{
-    display:inline;
-    float:none;
-  }
-  ul.top-nav.responsive li a{
-    display:block;
-    text-align:left;
-  }
-}
-
 
 #about-container{
   display: flex;
@@ -153,6 +61,11 @@ tr:hover{
 
 p{
   margin: 0 1em 0;
+}
+
+/*********MOBILE*********/
+@media screen and (max-width: 879px){
+  
 }
 
 /*Javascript Function demos*/
