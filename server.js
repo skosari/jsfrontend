@@ -7,7 +7,7 @@ const { response } = require('express');
 app.use(bodyParser.json());//app.use is middleware - layer of code that your requests will go through to get to the code below - bodyParser.json will prep the incoming data to be clean JSON formated data
 app.use(bodyParser.urlencoded({extended: false}));//when data comes in we work with arrays and strings and reject other stuff http://expressjs.com/en/resources/middleware/body-parser.html
 
-var ingredients = [{"id":"432rrd","text":"Eggs"},{"id":"432rrf","text":"Butter"},{"id":"432rrg","text":"Milk"},{"id":"432rrh","text":"Salt"},{"id":"432rrj","text":"Ketchup"}]//Since were not usingt a database yet
+var ingredients = [{"_id":"432rrd","text":"Eggs"},{"_id":"432rrf","text":"Butter"},{"_id":"432rrg","text":"Milk"},{"_id":"432rrh","text":"Salt"},{"_id":"432rrj","text":"Ketchup"}]//Since were not usingt a database yet
 
 app.get('/', function(require,response){//When a get request hits the root ('/') we run a function with a request and a response - the browser can read raw get requests
   // response.send('My First API Using the request.send command');//You MUST have a response for a get request

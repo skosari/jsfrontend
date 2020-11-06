@@ -1,0 +1,138 @@
+> use sandbox
+switched to db sandbox
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+> use snadbox
+switched to db snadbox
+
+> use sandbox
+switched to db sandbox
+
+> db.ingredients.insert("id":"423ffr","text":"Termeric")
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:26
+
+> db.ingredients.insert({"id":"423ffr","text":"Termeric"})
+WriteResult({ "nInserted" : 1 })
+
+> show collections
+ingredients
+
+> db.ingredients.find()
+{ "_id" : ObjectId("5fa5a3c21960b24886acce74"), "id" : "423ffr", "text" : "Termeric" }
+
+> db.ingredients.find().pretty()
+{
+        "_id" : ObjectId("5fa5a3c21960b24886acce74"),
+        "id" : "423ffr",
+        "text" : "Termeric"
+}
+
+> db.ingredients.insert({"_id":"567ght","text":"Sausage"})
+WriteResult({ "nInserted" : 1 })
+
+> db.ingredients.find()
+{ "_id" : ObjectId("5fa5a3c21960b24886acce74"), "id" : "423ffr", "text" : "Termeric" }
+{ "_id" : "567ght", "text" : "Sausage" }
+
+> db.ingredients.insert("_id":"432rrd","text":"Eggs"},{"_id":"432rrf","text":"Butter"},{"_id":"432rrg","text":"Milk"},{"_id":"432rrh","text":"Salt"},{"_id":"432rrj","text":"Ketchup")
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:27
+
+> db.ingredients.insert({"_id":"432rrd","text":"Eggs"},{"_id":"432rrf","text":"Butter"},{"_id":"432rrg","text":"Milk"},{"_id":"432rrh","text":"Salt"},{"_id":"432rrj","text":"Ketchup"})
+WriteResult({ "nInserted" : 1 })
+
+> db.ingredients.find().pretty()
+{
+        "_id" : ObjectId("5fa5a3c21960b24886acce74"),
+        "id" : "423ffr",
+        "text" : "Termeric"
+}
+{ "_id" : "567ght", "text" : "Sausage" }
+{ "_id" : "432rrd", "text" : "Eggs" }
+
+> db.ingredients.insert([{"_id":"432rrf","text":"Butter"},{"_id":"432rrg","text":"Milk"},{"_id":"432rrh","text":"Salt"},{"_id":"432rrj","text":"Ketchup"}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 4,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.ingredients.find.pretty()
+uncaught exception: TypeError: db.ingredients.find.pretty is not a function :
+@(shell):1:1
+
+> db.ingredients.find().pretty()
+{
+        "_id" : ObjectId("5fa5a3c21960b24886acce74"),
+        "id" : "423ffr",
+        "text" : "Termeric"
+}
+{ "_id" : "567ght", "text" : "Sausage" }
+{ "_id" : "432rrd", "text" : "Eggs" }
+{ "_id" : "432rrf", "text" : "Butter" }
+{ "_id" : "432rrg", "text" : "Milk" }
+{ "_id" : "432rrh", "text" : "Salt" }
+{ "_id" : "432rrj", "text" : "Ketchup" }
+
+> db.ingredients.delete({"_id" : ObjectId("5fa5a3c21960b24886acce74")})
+uncaught exception: TypeError: db.ingredients.delete is not a function :
+@(shell):1:1
+
+> db.ingredients.length
+sandbox.ingredients.length
+
+> db.ingredients.length()
+uncaught exception: TypeError: db.ingredients.length is not a function :
+@(shell):1:1
+
+> db.ingredients.find({"text","Termeric"})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:27
+
+> db.ingredients.find({"text":"Termeric"})
+{ "_id" : ObjectId("5fa5a3c21960b24886acce74"), "id" : "423ffr", "text" : "Termeric" }
+
+> db.ingredients --help
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:17
+
+> db.ingredients.remove("text":"Termeric"})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:28
+
+> db.ingredients.remove({"text":"Termeric"})
+WriteResult({ "nRemoved" : 1 })
+
+> db.ingredients.find().Pretty()
+uncaught exception: TypeError: db.ingredients.find(...).Pretty is not a function :
+@(shell):1:1
+
+> db.ingredients.find().pretty()
+{ "_id" : "567ght", "text" : "Sausage" }
+{ "_id" : "432rrd", "text" : "Eggs" }
+{ "_id" : "432rrf", "text" : "Butter" }
+{ "_id" : "432rrg", "text" : "Milk" }
+{ "_id" : "432rrh", "text" : "Salt" }
+{ "_id" : "432rrj", "text" : "Ketchup" }
+
+> db.ingredients.update({"_id":"567ght"},{$set:{"text":"Bacon"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.ingredients.find().pretty()
+{ "_id" : "567ght", "text" : "Bacon" }
+{ "_id" : "432rrd", "text" : "Eggs" }
+{ "_id" : "432rrf", "text" : "Butter" }
+{ "_id" : "432rrg", "text" : "Milk" }
+{ "_id" : "432rrh", "text" : "Salt" }
+{ "_id" : "432rrj", "text" : "Ketchup" }
+>
